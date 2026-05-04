@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0d1117">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="28sp"
+            android:textColor="#c9d1d9"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tagline"
+            android:textSize="13sp"
+            android:textColor="#8b949e"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#c9d1d9"
+            android:padding="16dp"
+            android:background="#161b22"
+            android:layout_marginBottom="16dp"
+            android:text="@string/checking_termux"/>
+
+        <Button
+            android:id="@+id/actionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_launch_desktop"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Secondary action — only visible when a distro is installed. Lets the
+             user kill any running vncserver from outside the viewer, e.g. if
+             they backgrounded the app and want to reclaim RAM/CPU. -->
+        <Button
+            android:id="@+id/stopButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_stop_session"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/pickerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/logView"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:textColor="#8b949e"
+            android:padding="12dp"
+            android:background="#161b22"
+            android:scrollbars="vertical"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</ScrollView>

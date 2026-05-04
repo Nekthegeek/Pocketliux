@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PocketLinux</string>
+    <string name="tagline">Linux desktop on Android · Termux + VNC</string>
+
+    <string name="checking_termux">Checking Termux…</string>
+    <string name="termux_not_installed">Termux is not installed. PocketLinux uses Termux as its Linux runtime — install it from F-Droid (the Play Store version is broken).</string>
+    <string name="termux_play_store_warning">Your Termux is from the Play Store, which is abandoned and won\'t work with PocketLinux. Please uninstall it and install the F-Droid version instead.</string>
+    <string name="termux_bad_config">Termux is installed but won\'t accept commands. Open Termux and run:\n\necho \"allow-external-apps=true\" >> ~/.termux/termux.properties\n\nthen tap Re-check.</string>
+    <string name="pick_a_distro">Pick a Linux distribution and window manager. You can change later by long-pressing the Launch button.</string>
+    <string name="installing">Installing %1$s. This will take 5-15 minutes depending on your network and device.</string>
+    <string name="install_failed">Install failed. See log below.</string>
+    <string name="ready_with">Ready · %1$s installed. Tap to launch.</string>
+    <string name="ready_generic">Ready. Tap to launch.</string>
+
+    <string name="action_open_fdroid">Open F-Droid</string>
+    <string name="action_recheck">Re-check</string>
+    <string name="action_launch_desktop">Launch desktop</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_stop_session">Stop running session</string>
+    <string name="notice_session_stopped">Session stopped.</string>
+
+    <string name="error_session_start">Couldn\'t start the VNC session. Check that the install completed.</string>
+    <string name="notice_disconnected">Session ended.</string>
+
+    <string name="reset_title">Reset PocketLinux?</string>
+    <string name="reset_message">This forgets the chosen distro so you can pick again. The Linux files inside Termux are NOT deleted — to remove those, run \"proot-distro remove &lt;name&gt;\" inside Termux.</string>
+    <string name="reset_confirm">Reset</string>
+    <string name="reset_done">Reset.</string>
+
+    <string name="cd_toggle_keyboard">Toggle on-screen keyboard</string>
+    <string name="modifier_armed">%1$s armed — tap a key</string>
+</resources>

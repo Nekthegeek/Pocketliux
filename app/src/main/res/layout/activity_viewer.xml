@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <com.pocketlinux.de.ui.VncCanvasView
+        android:id="@+id/canvas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- Floating keyboard toggle.
+         Tap to bring up the soft keyboard. Tap again to dismiss.
+         Long-press toggles a row of common-but-missing keys (Esc, Tab, Ctrl,
+         arrows) that mobile keyboards usually omit but every terminal user
+         needs. -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/keyboardToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/cd_toggle_keyboard"
+        android:src="@android:drawable/ic_menu_edit"
+        app:backgroundTint="#161b22"
+        app:tint="#c9d1d9"/>
+
+    <!-- Modifier-key strip. Hidden by default; shown via long-press on the FAB.
+         Each toggle is a sticky modifier — tap once to arm, the next regular
+         key sends with the modifier held, then it disarms. This is how every
+         decent terminal-on-mobile app handles the missing-keys problem. -->
+    <LinearLayout
+        android:id="@+id/modifierStrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:background="#161b22"
+        android:visibility="gone">
+
+        <Button android:id="@+id/keyEsc"   style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Esc" android:textSize="12sp"/>
+        <Button android:id="@+id/keyTab"   style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Tab" android:textSize="12sp"/>
+        <Button android:id="@+id/keyCtrl"  style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Ctrl" android:textSize="12sp"/>
+        <Button android:id="@+id/keyAlt"   style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Alt" android:textSize="12sp"/>
+        <Button android:id="@+id/keySuper" style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Sup" android:textSize="12sp"/>
+        <Button android:id="@+id/keyLeft"  style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="←" android:textSize="14sp"/>
+        <Button android:id="@+id/keyDown"  style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="↓" android:textSize="14sp"/>
+        <Button android:id="@+id/keyUp"    style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="↑" android:textSize="14sp"/>
+        <Button android:id="@+id/keyRight" style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="→" android:textSize="14sp"/>
+    </LinearLayout>
+
+</FrameLayout>
